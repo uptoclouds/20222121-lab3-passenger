@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 
 const event = ref<Event | null>(null)
 const props = defineProps({
-  id: {
+  _id: {
     type: String,
     required: true
   }
@@ -14,7 +14,7 @@ const props = defineProps({
 const router = useRouter()
 
 onMounted(() => {
-  EventService.getEvent(parseInt(props.id))
+  EventService.getEvent(props._id)
     .then((response) => {
       event.value = response.data
     })

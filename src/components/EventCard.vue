@@ -21,9 +21,9 @@ defineProps<{
 </script>
 
 <template>
-  <RouterLink class="event-link" :to="{ name: 'event-detail-view', params: { id: event.id } }">
+  <RouterLink class="event-link" :to="{ name: 'event-detail-view', params: { _id: event._id } }">
     <div class="event-card">
-      <h2>passenger : {{ event.title }}</h2>
+      <h2>passenger : {{ event._id }}</h2>
       <span>trips: {{ event.trips }} airlines name: {{ event.name }}</span>
     </div>
   </RouterLink>

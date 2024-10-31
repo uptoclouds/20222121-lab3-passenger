@@ -4,7 +4,7 @@ import { type Event } from '@/type'
 import { useRouter } from 'vue-router'
 const props = defineProps<{
   event: Event
-  id: 'String'
+  _id: string
 }>()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { event } = toRefs(props)

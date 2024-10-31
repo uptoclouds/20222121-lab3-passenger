@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue'
 //import EventInformation from '@/components/EventInformation.vue'
-import { type Event } from '@/type'
+import { type Event  } from '@/type'
 import { ref, onMounted, computed, watchEffect } from 'vue'
 import EventService from '@/services/EventService'
 
@@ -37,7 +37,7 @@ onMounted(() => {
   <h1>Passenger Information</h1>
   <!-- new element -->
   <div class="events">
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+    <EventCard v-for="event in events" :key="event._id" :event="event"/>
   <!--<h3>Lab 8.7</h3>
   <div class="events">
     <EventInformation v-for="event in events" :key="event.id" :event="event" />

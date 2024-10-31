@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { toRefs, defineProps } from 'vue'
 import { type Event } from '@/type'
+import { type Airline } from '@/type'
 const props = defineProps<{
   event: Event
-  id: 'String'
+  _id: string
+  airline: Airline
 }>()
-const { event } = toRefs(props)
+const { airline } = toRefs(props)
 </script>
 <template>
-  <p>{{ event.name }} | {{ event.location }}</p>
-  <p>{{ event.description }}</p>
+  <p>{{ airline.name }} | {{ airline.slogan}}</p>
+  <p>{{ airline.website}}</p>
 </template>

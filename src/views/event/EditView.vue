@@ -3,7 +3,7 @@ import { toRefs } from 'vue'
 import { type Event } from '@/type'
 const props = defineProps<{
   event: Event
-  id: 'String'
+  _id: string
 }>()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { event } = toRefs(props)
