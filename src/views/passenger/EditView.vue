@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { toRefs } from 'vue'
-import { type Event } from '@/type'
+import { type Data } from '@/types'
+
 const props = defineProps<{
-  event: Event
-  trips: 'String'
+    data: Data
+    id: string
 }>()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { event } = toRefs(props)
+const { data } = toRefs(props)
+
 </script>
 <template>
-  <p>Edit event here</p>
+    <p>Edit  here</p>
 </template>
