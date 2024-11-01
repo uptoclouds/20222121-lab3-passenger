@@ -23,8 +23,8 @@ defineProps<{
 <template>
 <div class="event-class">
     <div class="event-details">
-      <h2>{{ event.name }}</h2>
-      <span>@{{ event.name }} on {{ event.name }}</span>
+      <h2>{{ event.trips }}</h2>
+      <span>@{{ event.trips }} on {{ event.trips }}</span>
     </div>
   </div>
 </template>

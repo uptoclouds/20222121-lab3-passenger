@@ -29,7 +29,7 @@ const router = createRouter({
       component: StudentView
     },
     {
-      path: '/event/:id',
+      path: '/event/:trips',
       name: 'event-layout-view',
       component: EventLayoutView,
       props: true,

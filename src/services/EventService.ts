@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://api.instantwebtools.net/v1/',
+  baseURL: 'https://my-json-server.typicode.com/uptoclouds/331-intro-to-vite',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -11,9 +11,9 @@ const apiClient = axios.create({
 
 export default {
   getEvents(perPage: number, page: number) {
-    return apiClient.get('/passenger?_limit=' + perPage + '&_page=' + page)
+    return apiClient.get('/events?_limit=' + perPage + '&_page=' + page)
   },
-  getEvent(_id: string) {
-    return apiClient.get('/passenger/' + _id)
+  getEvent(trips: number) {
+    return apiClient.get('/events/' + trips)
   }
 }

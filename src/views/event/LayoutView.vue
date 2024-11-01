@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 
 const event = ref<Event | null>(null)
 const props = defineProps({
-  _id: {
+  trips: {
     type: String,
     required: true
   }
@@ -14,7 +14,7 @@ const props = defineProps({
 const router = useRouter()
 
 onMounted(() => {
-  EventService.getEvent(props._id)
+  EventService.getEvent(parseInt(props.trips))
     .then((response) => {
       event.value = response.data
     })
@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 <template>
   <div v-if="event">
-    <h1>{{ event.name }}</h1>
+    <h1>{{ event.trips }}</h1>
     <nav>
       <RouterLink :to="{ name: 'event-detail-view' }">Details</RouterLink>
       |

@@ -1,3 +1,10 @@
+export interface Event {
+  _id: string;
+  name: string;
+  trips: number;
+  airline: Airline[];
+  __v: number;
+}
 export interface Airline {
   _id: string;
   name: string;
@@ -7,14 +14,6 @@ export interface Airline {
   head_quaters: string;
   website: string;
   established: string;
-  __v: number;
-}
-
-export interface Event {
-  _id: string;
-  name: string;
-  trips: number;
-  airline: Airline[];
   __v: number;
 }
 
