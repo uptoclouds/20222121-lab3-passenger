@@ -2,7 +2,7 @@ export interface Event {
   _id: string;
   name: string;
   trips: number;
-  airline: Airline[];
+  airline?: Airline[];
   __v: number;
 }
 export interface Airline {
@@ -32,3 +32,4 @@ export interface StudentEvent {
   penAmount: number
   description: string
 }
+export type Data = Event;
