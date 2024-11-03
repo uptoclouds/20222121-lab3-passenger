@@ -17,16 +17,20 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-import { type Data, type Airline } from '@/types'
+import { type Airline } from '@/types'
 import PassengerServices from '@/services/PassengerServices'
 import AirlineServices from '@/services/AirlineServices'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import AirlineView from '@/views/passenger/AirlineView.vue'
+import { useEventStore } from '@/stores/event'
+import { storeToRefs } from 'pinia'
 
-const data = ref<Data | null>(null)
+//const data = ref<Data | null>(null)
 const airline = ref<Airline | null>(null)
-const router = useRouter()
+//const router = useRouter()
 const route = useRoute()
+const store = useEventStore()
+const { data } = storeToRefs(store)
 
 onMounted(() => {
   console.log('Component mounted with ID:', route.params.id)
@@ -46,17 +50,6 @@ const fetchPassengerData = () => {
       data.value = responseData;
       if (route.params.airlineId) {
         fetchAirlineData(route.params.airlineId as string)
-      }
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error)
-      if (error.response && error.response.status === 404) {
-        router.push({
-          name: '404-resource-view',
-          params: { resource: 'data' }
-        })
-      } else {
-        router.push({ name: 'network-error-view' })
       }
     })
 }

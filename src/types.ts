@@ -23,4 +23,13 @@ export interface PassengerResponse {
   totalPages: number;
   data: PassengerData[];
 }
+
+export interface MessageState {
+  message: string
+}
+
+export interface EventState {
+  data: Data | null
+}
+
 export type Data = PassengerData;
